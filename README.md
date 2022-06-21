@@ -1,7 +1,8 @@
 # ESP8266 Smartwatch BPM Reader
 
-Using MAX30102 to read BPM
 <img src="src/heartbeat_SQL.png" width="480">
+
+Using MAX30102 to read BPM
 
 ## Tool
 - ESP8266
