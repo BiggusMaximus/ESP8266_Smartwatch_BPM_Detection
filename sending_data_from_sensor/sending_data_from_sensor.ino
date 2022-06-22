@@ -52,6 +52,11 @@ void setup() {
 
 void loop() {
   // Read data from sensor
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0,0);
+  
   timeClient.update();
   time_t epochTime = timeClient.getEpochTime();
   struct tm *ptm = gmtime ((time_t *)&epochTime);
@@ -59,39 +64,49 @@ void loop() {
   int hour_time = ptm->tm_hour;
   if(hour_time < 10) {
     Serial.print("0");
+    display.print("0");
   }
   Serial.print(String(hour_time) + ":");
+  display.print(String(hour_time) + ":");
   
   int minute_time = ptm->tm_min; 
   if(minute_time < 10) {
     Serial.print("0");
+    display.print("0");
   }
   Serial.print(String(minute_time) + ":");
+  display.print(String(minute_time) + ":");
   
   int sec_time = ptm->tm_sec;
   if(sec_time < 10) {
     Serial.print("0");
+    display.print("0");
   }
   Serial.print(sec_time);
-
+  display.print(String(sec_time) + " | ");
   Serial.print(" | ");
 
   int monthDay = ptm->tm_mday;
   if(monthDay < 10) {
     Serial.print("0");
+    display.print("0");
   }
   Serial.print(String(monthDay) + "/");
+  display.print(String(monthDay) + "/");
   
   int currentMonth = ptm->tm_mon+1;
   if(currentMonth < 10) {
     Serial.print("0");
+    display.print("0");
   }
   Serial.print(String(currentMonth) + "/");
+  display.print(String(currentMonth) + "/");
   
   int currentYear = ptm->tm_year+1900;
   Serial.print(currentYear);
+  display.print(currentYear);
   Serial.println();
-
+  display.display(); 
   
   delay(1000);
 }
