@@ -17,9 +17,9 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 MAX30105 particleSensor;
 
 
-const char* ssid = "PARAMITA";
-const char* password = "76602223";
-const char* serverName = "http://192.168.0.100/ESP8266_Smartwatch_BPM_Detection/sensorToDatabase.php";
+const char* ssid = " ";
+const char* password = " ";
+const char* serverName = "http://  /ESP8266_Smartwatch_BPM_Detection/sensorToDatabase.php";
 
 
 const long utcOffsetInSeconds = 25200;
